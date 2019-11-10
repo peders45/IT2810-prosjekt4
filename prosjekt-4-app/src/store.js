@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 const store = createStore(
   reducer,
   composeWithDevTools(
-  applyMiddleware(logger, thunk))
+  applyMiddleware(thunk, logger))
 );
 
 export default store;
