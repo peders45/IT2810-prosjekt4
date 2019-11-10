@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextInput, View } from 'react-native';
+import { TextInput, View, StyleSheet } from 'react-native';
 import { searchForItem }  from "../../state/actions/searchActions";
 import { connect } from 'react-redux'
 
@@ -9,11 +9,12 @@ const SearchField = ({ searchForItem }) => {
     
   return(
         <View>
-          <TextInput
-          placeholder="Search for menu items..."
-          onChangeText={(text) => setInput(text)}
+          <TextInput style={styles.text}
+            placeholder="Search for menu items..."
+            onChangeText={(text) => setInput(text)}
+            returnKeyType='search'
+            onSubmitEditing={() => searchForItem(input)}
           />
-          <Button onPress={() => searchForItem(input)} title="Search"/>
         </View>
     );
 };
@@ -25,3 +26,15 @@ const mapDispatchToProps = {
 
 //Connect the store to this component
 export default connect(null, mapDispatchToProps)(SearchField)
+
+//Styling
+const styles = StyleSheet.create({
+  text: {
+    backgroundColor: '#fff',
+    borderWidth: 2,
+    borderStyle: 'solid',
+    borderColor: '#FF6A6A',
+    borderRadius: 4,
+    padding: 6,
+  }
+});
