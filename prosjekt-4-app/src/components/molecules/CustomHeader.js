@@ -12,9 +12,7 @@ const CustomHeader = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord 
       <View>
         <Header 
             containerStyle={styles.header} 
-            centerContainerStyle={styles.searchfield} 
-            leftContainerStyle={styles.sides} 
-            rightContainerStyle={styles.sides} 
+            leftContainerStyle={styles.menuIcon} 
             placement={'right'}
             leftComponent={<Icon 
                 name='menu'
@@ -23,15 +21,7 @@ const CustomHeader = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord 
                 underlayColor='#f4dc22'
                 onPress={() => toggleSideMenu(!drawerStatus)}
             />}
-            centerComponent={<SearchField/>}
-            rightComponent={<Avatar 
-                rounded icon={{ name: 'search', color: '#43484D', size: 30 }}
-                size={'medium'}
-                overlayContainerStyle={styles.iconContainer}
-                color='#43484D'
-                underlayColor='#f4dc22'
-                onPress={() => searchForItem(searchWord)} 
-            />}
+            rightComponent={<SearchField/>}
           />
       </View>
   );
@@ -59,13 +49,7 @@ const styles = StyleSheet.create({
       backgroundColor: "#ffe836",
       marginTop:-5,
     },
-    searchfield: {
-      paddingRight:10
-    },
-    sides: {
+    menuIcon: {
       padding: 5,
     },
-    iconContainer: {
-        backgroundColor: '#FF6A6A'
-    }
 });
