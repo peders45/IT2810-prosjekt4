@@ -2,10 +2,16 @@ import React from 'react';
 import CategoryCheckbox from '../atoms/CategoryCheckbox'
 import { Text, View, StyleSheet, TouchableOpacity  } from 'react-native';
 import { connect } from 'react-redux'
+import { toggleSideMenu }  from "../../state/actions/sideMenuActions";
 import { searchForItem }  from "../../state/actions/searchActions";
 
 //Section for category checkboxes
-const CategorySection = ({ searchForItem, searchWord }) => {
+const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord }) => {
+  const handleFilter = () => {
+    toggleSideMenu(!drawerStatus);
+    searchForItem(searchWord)
+  };
+
   return(
     <View style={styles.view}>
       <Text style={styles.heading}>Choose categories</Text>
@@ -18,8 +24,11 @@ const CategorySection = ({ searchForItem, searchWord }) => {
       <CategoryCheckbox categoryShown="Desserts" categoryQuery="Desserts" />
       <CategoryCheckbox categoryShown="Coffee & tea" categoryQuery="Coffee_&_Tea" />
       <CategoryCheckbox categoryShown="Smoothies & shakes" categoryQuery="Smoothies_&_Shakes" />
-      <TouchableOpacity onPress={() => searchForItem(searchWord)} style={styles.button}>
+      <TouchableOpacity onPress={() => handleFilter()} style={styles.button}>
           <Text style={styles.buttonText}>Filter</Text>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => toggleSideMenu(!drawerStatus)} style={styles.button}>
+          <Text style={styles.buttonText}>Close</Text>
       </TouchableOpacity>
     </View>
   )
@@ -27,11 +36,13 @@ const CategorySection = ({ searchForItem, searchWord }) => {
 
 //Dispatching actions to the store
 const mapDispatchToProps = {
+  toggleSideMenu,
   searchForItem
  };
 
  //Extract data from the store
 const mapStateToProps = (state) => ({
+  drawerStatus: state.drawerStatus,
   searchWord: state.searchWord
 });
 
