@@ -20,6 +20,7 @@ import {rateMenu} from '../../state/actions/ratingActions'
         onFinishRating={setRating}
         defaultRating={0}
         size={15}
+        selectedColor="#000000"
         />
       </View>
     );
