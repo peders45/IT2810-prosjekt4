@@ -163,7 +163,7 @@ const menus =  [
 ];
 
 //Section for the main view including the side menu (MenuDrawer), the header and the searchresults
-const MainView = ({ drawerStatus, menuItems, searchForItem }) => {
+const MainView = ({ drawerStatus }) => {
 
     return(
       <View style={styles.mainView}>
