@@ -17,7 +17,7 @@ import RatingWrapper from '../molecules/RatingWrapper'
           <Text>Saturated fat {section.Saturated_Fat}g</Text>
           <Text>Sugars: {section.Sugars}g</Text>
         </View>
-        <RatingWrapper/>
+        <RatingWrapper menuId={section._id}/>
       </View>
     );
   };

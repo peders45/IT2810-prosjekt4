@@ -5,7 +5,11 @@ import { connect } from 'react-redux'
 import {rateMenu} from '../../state/actions/ratingActions'
 
 
-  const RatingWrapper = ({ rateMenu }) => {
+  const RatingWrapper = ({ rateMenu, menuId }) => {
+
+    const setRating = (value) =>{
+      rateMenu(value, menuId)
+    }
 
     return (
       <View style={styles.rating}>
@@ -13,7 +17,7 @@ import {rateMenu} from '../../state/actions/ratingActions'
         <AirbnbRating
         count={5}
         showRating={false}
-        onFinishRating={rateMenu}
+        onFinishRating={setRating}
         defaultRating={0}
         size={15}
         />
@@ -32,6 +36,6 @@ const styles = StyleSheet.create({
     rating:{
         display:"flex",
         justifyContent:"center",
-        textAlign: "center",
+        alignItems: "center",
       }
 });

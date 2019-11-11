@@ -14,10 +14,10 @@ export function searchForItem(searchWord) {
   } 
 
   return function(dispatch) {
-    /* dispatch({
+    dispatch({
       type: actionTypes.PAGINATION,
       payload: 0
-    }) */
+    })
 
     dispatch({
       type: actionTypes.SEARCHWORD,

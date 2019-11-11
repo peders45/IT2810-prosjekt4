@@ -1,7 +1,7 @@
-// import client from '../../setupApolloClient';
+import client from '../../../setupApolloClient';
 import store from '../../store';
 import actionTypes from '../../actionTypes';
-// import queries from '../../query';
+import queries from '../../../query';
 
 //Actions for pagination and searching, as well as checking whether search was successful
 export function doPagination(isNext) {
@@ -31,29 +31,29 @@ export function doPagination(isNext) {
       type: actionTypes.MENU_REQUESTED,
     })
     //Search query
-    // client.query({
-    //   query: queries.GET_MENU,
-    //   variables: {
-    //   first: state.first,
-    //   offset:offset,
-    //   searchWord: state.searchWord,
-    //   categories: categories, 
-    //   minReviewScore: state.sliderRating,
-    //   maxCalories: state.sliderMaxCalories,
-    //   sort: {
-    //     sortCategory: state.sortCategory,
-    //     isLowHigh: state.sortValue}       
-    //   }
-    // })
-    // //Change the state according to the query
-    // .then(data => dispatch({
-    //   type: actionTypes.MENU_RECEIVED,
-    //   payload: data
-    // }))
+    client.query({
+      query: queries.GET_MENU,
+      variables: {
+      first: state.first,
+      offset:offset,
+      searchWord: state.searchWord,
+      categories: categories, 
+      minReviewScore: state.sliderRating,
+      maxCalories: state.sliderMaxCalories,
+      sort: {
+        sortCategory: state.sortCategory,
+        isLowHigh: state.sortValue}       
+      }
+    })
+    //Change the state according to the query
+    .then(data => dispatch({
+      type: actionTypes.MENU_RECEIVED,
+      payload: data
+    }))
 
-    // .catch(error => dispatch({
-    //   type: actionTypes.MENU_FAILED,
-    //   payload: error
-    // }))
+    .catch(error => dispatch({
+      type: actionTypes.MENU_FAILED,
+      payload: error
+    }))
   }
 }

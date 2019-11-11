@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import {searchForItem} from '../../state/actions/searchActions'
 
 //Section for the main view including the side menu (MenuDrawer), the header and the searchresults
-const MainView = ({ drawerStatus}) => {
+const MainView = ({drawerStatus, searchForItem}) => {
 
   useEffect(() => {searchForItem(null)}, [searchForItem]);
 
