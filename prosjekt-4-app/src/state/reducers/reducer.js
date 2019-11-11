@@ -7,7 +7,7 @@ const reducer = (state = {
     sortCategory: "",
     sortValue: null,
     status: "",
-    first: 9,
+    first: 6,
     offset: 0,
     count:0,
     error: []

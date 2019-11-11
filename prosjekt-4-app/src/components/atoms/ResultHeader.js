@@ -5,7 +5,7 @@ const ResultHeader = section => {
     return (
       <View style={styles.header}>
         <Text style={styles.text} numberOfLines={1} >{section.Item}</Text>
-        <Text style={styles.score} >{Math.floor(section.score)} ⭐</Text>
+        <Text style={styles.score} >{Math.round((section.score)*10)/10} ★</Text>
       </View>
     );
   };
