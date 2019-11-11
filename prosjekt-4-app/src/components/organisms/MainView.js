@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 import {searchForItem} from '../../state/actions/searchActions'
 
 //Section for the main view including the side menu (MenuDrawer), the header and the searchresults
-const MainView = ({ drawerStatus, menus}) => {
+const MainView = ({ drawerStatus}) => {
 
   useEffect(() => {searchForItem(null)}, [searchForItem]);
 
@@ -37,7 +37,6 @@ const mapDispatchToProps = {
 //Extract data from the store
 const mapStateToProps = (state) => ({
     drawerStatus: state.drawerStatus,
-    menus: state.menus
 });
 
 //Connect the store to this component
