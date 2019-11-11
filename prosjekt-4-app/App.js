@@ -166,8 +166,8 @@ export default function App() {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-      <ResultSection sections={menus}/>
         <CustomHeader/>
+        <ResultSection sections={menus}/>
       </View>
     </Provider>
   );
