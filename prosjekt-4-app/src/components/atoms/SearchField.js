@@ -16,14 +16,6 @@ const SearchField = ({ searchForItem }) => {
             returnKeyType='search'
             onSubmitEditing={() => searchForItem(input)}
           />
-          {/* <Avatar 
-            rounded icon={{ name: 'search', color: '#43484D', size: 30 }}
-            size={'medium'}
-            overlayContainerStyle={styles.iconContainer}
-            color='#43484D'
-            underlayColor='#f4dc22'
-            onPress={() => searchForItem(input)} 
-          /> */}
           <Icon containerStyle={styles.searchIcon}
               name='search'
               size={30}
@@ -56,10 +48,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     padding: 6,
     margin: 8,
-  },
-  iconContainer: {
-    backgroundColor: '#FF6A6A',
-    marginTop: 5
   },
   searchIcon: {
     padding: 5,
