@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
 
-
+//Section for expanded view with details about menu item.
   const ResultDetailSection = (section, { setRating }) => {
 
     return (
