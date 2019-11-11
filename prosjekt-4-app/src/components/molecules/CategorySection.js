@@ -1,5 +1,6 @@
 import React from 'react';
 import CategoryCheckbox from '../atoms/CategoryCheckbox'
+import SortDropdown from '../atoms/SortDropdown'
 import { Text, View, StyleSheet, TouchableOpacity  } from 'react-native';
 import { connect } from 'react-redux'
 import { toggleSideMenu }  from "../../state/actions/sideMenuActions";
@@ -24,8 +25,9 @@ const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWo
       <CategoryCheckbox categoryShown="Desserts" categoryQuery="Desserts" />
       <CategoryCheckbox categoryShown="Coffee & tea" categoryQuery="Coffee_&_Tea" />
       <CategoryCheckbox categoryShown="Smoothies & shakes" categoryQuery="Smoothies_&_Shakes" />
+      <SortDropdown/>
       <TouchableOpacity onPress={() => handleFilter()} style={styles.button}>
-          <Text style={styles.buttonText}>Filter</Text>
+          <Text style={styles.buttonText}>Filter and sort</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleSideMenu(!drawerStatus)} style={styles.button}>
           <Text style={styles.buttonText}>Close</Text>

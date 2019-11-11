@@ -39,6 +39,6 @@ const styles = StyleSheet.create({
   rating:{
     display:"flex",
     justifyContent:"center",
-    textAlign: "center",
+    alignItems: "center",
   }
 });
