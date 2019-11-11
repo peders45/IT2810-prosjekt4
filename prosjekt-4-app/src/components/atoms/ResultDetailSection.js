@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection:"row",
     justifyContent:"space-between",
-    borderBottomLeftRadius: "3px",
-    borderBottomRightRadius: "3px",
-    width: "90vw",
+    borderBottomLeftRadius: 3,
+    borderBottomRightRadius: 3,
+    width: 300,
     backgroundColor: "#fff3b4",
-    padding: "5px"
+    padding: 5
   },
   rating:{
     display:"flex",

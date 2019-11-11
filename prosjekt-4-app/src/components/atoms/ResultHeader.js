@@ -5,7 +5,7 @@ const ResultHeader = section => {
     return (
       <View style={styles.header}>
         <Text style={styles.text} numberOfLines={1} >{section.Item}</Text>
-        <Text >{Math.floor(section.score)} ⭐</Text>
+        <Text style={styles.score} >{Math.floor(section.score)} ⭐</Text>
       </View>
     );
   };
@@ -18,14 +18,18 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection:"row",
     justifyContent: "space-evenly",
-    padding: "5px",
-    marginTop: "1vh",
-    width: "90vw",
-    height: "6vh",
+    padding: 5,
+    marginTop: 6,
+    width: 300,
+    height: 40,
     backgroundColor: "#ffe836",
   },
   text: {
-    width:"60vw"
+    paddingTop: 6,
+    width:250
+  },
+  score: {
+    paddingTop: 5
   }
 });
 

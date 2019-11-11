@@ -26,7 +26,7 @@ export default ResultSection;
 
 const styles = StyleSheet.create({
   ResultSection: {
-    paddingTop: "3vh",
+    paddingTop: 20,
     display: "flex",
     alignItems: 'center',
     justifyContent: 'center',
