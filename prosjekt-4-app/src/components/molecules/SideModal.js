@@ -30,12 +30,12 @@ const SideModal = () => {
                 </View>
             </Modal>
 
-        <TouchableHighlight style={styles.button}
+        {/* <TouchableHighlight style={styles.button}
           onPress={() => {
             visibleModalHandler(true);
             }}>
           <Text>Filter result</Text>
-        </TouchableHighlight>
+        </TouchableHighlight> */}
       </View>
     );
   }
