@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
-import { AirbnbRating } from 'react-native-elements';
+import RatingWrapper from '../molecules/RatingWrapper'
 
 
-  const ResultDetailSection = (section, { setRating }) => {
+  const ResultDetailSection = (section) => {
 
     return (
       <View style={styles.content}>
@@ -17,17 +17,7 @@ import { AirbnbRating } from 'react-native-elements';
           <Text>Saturated fat {section.Saturated_Fat}g</Text>
           <Text>Sugars: {section.Sugars}g</Text>
         </View>
-        <View style={styles.rating}>
-          <Text>Your Rating: </Text>
-          <AirbnbRating
-            count={5}
-            showRating={false}
-            onFinishRating={setRating}
-            defaultRating={0}
-            size={15}
-            onFinishRating={setRating}
-          />
-        </View>
+        <RatingWrapper/>
       </View>
     );
   };
