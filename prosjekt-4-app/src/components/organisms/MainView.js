@@ -164,6 +164,7 @@ const menus =  [
 
 //Section for the main view including the side menu (MenuDrawer), the header and the searchresults
 const MainView = ({ drawerStatus }) => {
+
     return(
       <View style={styles.mainView}>
         <MenuDrawer
@@ -176,7 +177,6 @@ const MainView = ({ drawerStatus }) => {
         >
           <CustomHeader/>
           <ResultSection sections={menus}/>
-          {/* legg til resultsection etc her*/}
         </MenuDrawer>
       </View>
   );
@@ -185,6 +185,7 @@ const MainView = ({ drawerStatus }) => {
 //Extract data from the store
 const mapStateToProps = (state) => ({
     drawerStatus: state.drawerStatus,
+
 });
 
 //Connect the store to this component

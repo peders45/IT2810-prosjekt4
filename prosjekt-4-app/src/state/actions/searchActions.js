@@ -1,17 +1,17 @@
-/* import client from '../../setupApolloClient';
-import store from '../../store'; */
+import client from '../../../setupApolloClient';
+import store from '../../store';
 import actionTypes from '../../actionTypes';
-/* import queries from '../../query';
- */
+import queries from '../../../query';
+ 
 //Actions for searching, as well as checking whether search was successful
 export function searchForItem(searchWord) {
-  /* const state = store.getState();
+   const state = store.getState();
   //If empty, change categories array to include everything
   let categories = state.category
   if (categories.length === 0) {
     categories = ["Breakfast", "Beef_&_Pork", "Chicken_&_Fish", "Snacks_&_Sides", 
     "Salads", "Beverages", "Desserts", "Coffee_&_Tea", "Smoothies_&_Shakes"]
-  } */
+  } 
 
   return function(dispatch) {
     /* dispatch({
@@ -24,7 +24,7 @@ export function searchForItem(searchWord) {
       payload: searchWord
     })
 
-    /* dispatch({
+    dispatch({
       type: actionTypes.MENU_REQUESTED,
     })
     //Search query
@@ -35,8 +35,6 @@ export function searchForItem(searchWord) {
       offset:0,
       searchWord: searchWord,
       categories: categories, 
-      minReviewScore: state.sliderRating,
-      maxCalories: state.sliderMaxCalories,
       sort: {
         sortCategory: state.sortCategory,
         isLowHigh: state.sortValue}       
@@ -51,6 +49,6 @@ export function searchForItem(searchWord) {
     .catch(error => dispatch({
       type: actionTypes.MENU_FAILED,
       payload: error
-    })) */
+    })) 
   }
 }

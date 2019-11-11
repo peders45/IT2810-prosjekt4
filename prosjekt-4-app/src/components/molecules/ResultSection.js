@@ -4,7 +4,7 @@ import Accordion from 'react-native-collapsible/Accordion';
 import ResultDetailSection from '../atoms/ResultDetailSection'
 import ResultHeader from '../atoms/ResultHeader'
 
-const ResultSection = ({sections}) => {
+const ResultSection = ({ sections }) => {
 
     const [activeSections, setActiveSections] = useState([])
 

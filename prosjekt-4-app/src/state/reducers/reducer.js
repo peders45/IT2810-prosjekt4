@@ -4,8 +4,6 @@ const reducer = (state = {
     searchWord: "",
     menus: [],
     category: [],
-    /* sliderMaxCalories: 1880,
-    sliderRating: 0, */
     sortCategory: "",
     sortValue: null,
     status: "",
@@ -76,16 +74,6 @@ const reducer = (state = {
         ...state,
         category: newCategories
       };
-/*       case "SLIDER_CALORIES":
-        return state = {
-          ...state,
-          sliderMaxCalories: action.payload
-        };
-      case "SLIDER_RATING":
-        return state = {
-          ...state,
-          sliderRating: action.payload
-        }; */
     case "SORT":
       return state = {
         ...state,
