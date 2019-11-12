@@ -20,6 +20,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
     "react-native-collapsible": "^1.5.1",
     "react-native-elements": "^1.2.7",
+    "react-native-picker-select": "^6.3.3",
     "react-native-rating-star": "^0.2.1",
     "react-native-ratings": "^6.5.0",
     "react-native-side-drawer": "^1.2.5",

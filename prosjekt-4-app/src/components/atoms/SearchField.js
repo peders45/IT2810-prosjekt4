@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
-import { TextInput, View, StyleSheet } from 'react-native';
-import { Header, Icon, Avatar } from 'react-native-elements'
+import { TextInput, View, StyleSheet, Keyboard } from 'react-native';
+import { Icon } from 'react-native-elements'
 import { searchForItem }  from "../../state/actions/searchActions";
 import { connect } from 'react-redux'
 
 //Input field and button for text search
 const SearchField = ({ searchForItem }) => {
   const [ input, setInput ] = useState([]);
+
+  const handleSearch = () => {
+    Keyboard.dismiss()
+    searchForItem(input)
+  };
     
   return(
         <View style={styles.view}>
@@ -21,7 +26,7 @@ const SearchField = ({ searchForItem }) => {
               size={30}
               color='#43484D'
               underlayColor='#f4dc22'
-              onPress={() => searchForItem(input)}
+              onPress={() => handleSearch()}
           />
         </View>
     );
