@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
 import { connect } from 'react-redux'
 import {rateMenu} from '../../state/actions/ratingActions'
@@ -23,6 +23,9 @@ import {rateMenu} from '../../state/actions/ratingActions'
         size={15}
         selectedColor="#000000"
         />
+        <TouchableOpacity onPress={() => saveFavourite(menuId)} style={styles.button}>
+          <Text style={styles.buttonText}>Add to favourites</Text>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -40,5 +43,15 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems: "center",
         marginRight: 10,
-      }
+    },
+    button: {
+      backgroundColor: '#FF6A6A',
+      padding: 10,
+      alignItems: 'center',
+      borderRadius: 4,
+      marginTop: 10,
+    },
+    buttonText: {
+      color: '#43484D'
+    },
 });
