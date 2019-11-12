@@ -16,9 +16,9 @@ export function doPagination(isNext) {
   //Splitting searchresults into groups of 9
   let offset = 0;
   if(isNext){
-      offset = state.offset += 9
-  }else if(state.offset > 9){
-    offset = state.offset -= 9 
+      offset = state.offset += 6
+  }else if(state.offset > 6){
+    offset = state.offset -= 6 
   }
 
   return function(dispatch) {

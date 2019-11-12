@@ -4,7 +4,7 @@ import { sortResult }  from "../../state/actions/sortingActions";
 import { View, StyleSheet } from 'react-native';
 import RNPickerSelect from 'react-native-picker-select';
 
-//Drop down menu for selection of value to sort results on
+//Drop down menu for selection of value to sort results on. Placed in side menu.
 const SortingDropDown = ({ sortResult }) => { 
     const [ selectedValue, setSelectedValue ] = useState();
 

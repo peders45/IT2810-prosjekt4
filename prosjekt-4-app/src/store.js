@@ -4,7 +4,7 @@ import logger from 'redux-logger';
 import reducer from './state/reducers/reducer';
 import thunk from 'redux-thunk';
 
-//Redux store for state handling, with only one reducer for simplification
+//Redux store for state handling, with only one reducer for simplicity
 const store = createStore(
   reducer,
   composeWithDevTools(

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
+//Header part of list view with name and total rating of menu items. 
+//Detail section expands when header is clicked.
 const ResultHeader = section => {
     return (
       <View style={styles.header}>
@@ -9,7 +11,6 @@ const ResultHeader = section => {
       </View>
     );
   };
-
 
 export default ResultHeader;
 
