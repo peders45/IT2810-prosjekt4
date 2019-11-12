@@ -1,13 +1,17 @@
 import React from 'react';
 import { Header, Icon } from 'react-native-elements'
-import { View, StyleSheet } from 'react-native'
+import { View, StyleSheet, Keyboard } from 'react-native'
 import SearchField from '../atoms/SearchField'
 import { connect } from 'react-redux'
 import { toggleSideMenu }  from "../../state/actions/sideMenuActions";
-import { searchForItem }  from "../../state/actions/searchActions";
 
 //Header with searchfield, searchbutton and filter/sort button
 const CustomHeader = ({ toggleSideMenu, drawerStatus }) => {
+    const handleToggle = () => {
+      Keyboard.dismiss()
+      toggleSideMenu(!drawerStatus)
+    };
+
     return(
       <View>
         <Header 
@@ -19,7 +23,7 @@ const CustomHeader = ({ toggleSideMenu, drawerStatus }) => {
                 size={30}
                 color='#43484D'
                 underlayColor='#f4dc22'
-                onPress={() => toggleSideMenu(!drawerStatus)}
+                onPress={() => handleToggle()}
             />}
             rightComponent={<SearchField/>}
           />
@@ -34,7 +38,6 @@ const mapDispatchToProps = {
 
 //Extract data from the store
 const mapStateToProps = (state) => ({
-    searchWord: state.searchWord,
     drawerStatus: state.drawerStatus
 });
 
