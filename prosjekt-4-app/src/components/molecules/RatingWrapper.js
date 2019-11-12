@@ -7,6 +7,8 @@ import {saveFavourite} from '../../state/actions/favouritesActions'
 
 //Rating functionality for each menu item, imported from 'react-native-elements'.
 //Rating out of five stars, added to database.
+//Mase as a wrapper to be included in the function for displaying the detail section 
+//in the accortin component in result section
   const RatingWrapper = ({ rateMenu, menuId, saveFavourite }) => {
 
     const setRating = (value) =>{

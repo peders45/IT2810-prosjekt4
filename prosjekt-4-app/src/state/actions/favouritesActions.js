@@ -2,7 +2,7 @@ import store from '../../store';
 import actionTypes from '../../actionTypes';
 import {AsyncStorage} from 'react-native';
  
-//Actions for searching, as well as checking whether search was successful
+//Actions for saving favourites locally with AsyncStorage, takes in the id of the menu item to save
 export function saveFavourite(menuId) {
     const state = store.getState();
 
@@ -11,7 +11,6 @@ export function saveFavourite(menuId) {
       type: actionTypes.SAVE_FAVOURITE_REQUESTED,
       payload: 0
     })
-    //Save asyncStorage
     try{
         const data = await AsyncStorage.getItem('McFavs');
         if(data){
@@ -52,6 +51,7 @@ export function saveFavourite(menuId) {
 }
 }
 
+//Actions for fetching locally stored favourites with AsyncStorage
 export function showFavourites() {
 
     return  async function(dispatch) {
@@ -59,12 +59,11 @@ export function showFavourites() {
         type: actionTypes.SHOW_FAVOURITE_REQUESTED,
         payload: 0
       })
-
-      //Search query
       try{
         const data = await AsyncStorage.getItem('McFavs');
         if(data){
             const favs = JSON.parse(data);
+            //New state to be set
             const newState = {
                 drawerStatus: false,
                 searchWord: "",
