@@ -12,10 +12,8 @@ const ResultSection = ({doPagination, menuItems, offset, count}) => {
 
     const checkPagination = (isNext) =>{
       if(isNext && offset + 6 < count){
-        console.log("next")
         doPagination(isNext)
       }else if(!isNext && offset - 6 >= 0){
-        console.log("prev")
         doPagination(isNext)
       }
     }

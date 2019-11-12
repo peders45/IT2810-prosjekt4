@@ -2,6 +2,7 @@ import client from '../../../setupApolloClient';
 import store from '../../store';
 import actionTypes from '../../actionTypes';
 import queries from '../../../query';
+import {AsyncStorage} from 'react-native';
 
 //Actions for pagination and searching, as well as checking whether search was successful
 export function doPagination(isNext) {
@@ -36,7 +37,7 @@ export function doPagination(isNext) {
       variables: {
       first: state.first,
       offset:offset,
-      searchWord: state.searchWord,
+      searchWord: state.searchWord == "StartupSequence" ? null : state.searchWord,
       categories: categories, 
       minReviewScore: state.sliderRating,
       maxCalories: state.sliderMaxCalories,
@@ -48,8 +49,12 @@ export function doPagination(isNext) {
     //Change the state according to the query
     .then(data => dispatch({
       type: actionTypes.MENU_RECEIVED,
-      payload: data
+      payload: data.data.menu
     }))
+
+    .then(() =>{
+      AsyncStorage.setItem('MclocalData', JSON.stringify(store.getState()));
+    })
 
     .catch(error => dispatch({
       type: actionTypes.MENU_FAILED,

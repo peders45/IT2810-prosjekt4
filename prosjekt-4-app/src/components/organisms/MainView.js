@@ -10,7 +10,7 @@ import {searchForItem} from '../../state/actions/searchActions'
 //Section for the main view including the side menu (MenuDrawer), the header and the searchresults
 const MainView = ({drawerStatus, searchForItem}) => {
 
-  useEffect(() => {searchForItem(null)}, [searchForItem]);
+  useEffect(() => {searchForItem("StartupSequence")}, [searchForItem]);
 
     return(
       <View style={styles.mainView}>

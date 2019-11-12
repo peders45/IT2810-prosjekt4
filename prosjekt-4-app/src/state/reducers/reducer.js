@@ -36,8 +36,8 @@ const reducer = (state = {
     case "MENU_RECEIVED":
       return state = {
         ...state,
-        menus: action.payload.data.menu.menus,
-        count: action.payload.data.menu.count,
+        menus: action.payload.menus,
+        count: action.payload.count,
         status: "menu received"
       };
     case "MENU_FAILED":
