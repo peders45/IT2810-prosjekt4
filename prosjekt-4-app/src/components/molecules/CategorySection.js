@@ -30,6 +30,9 @@ const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWo
       <TouchableOpacity onPress={() => handleFilter()} style={styles.button}>
           <Text style={styles.buttonText}>Filter and sort</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => showFavourite()} style={styles.button}>
+          <Text style={styles.buttonText}>Show favourites</Text>
+      </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleSideMenu(!drawerStatus)} style={styles.button}>
           <Text style={styles.buttonText}>Close</Text>
       </TouchableOpacity>
@@ -40,7 +43,7 @@ const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWo
 //Dispatching actions to the store
 const mapDispatchToProps = {
   toggleSideMenu,
-  searchForItem
+  searchForItem,
  };
 
  //Extract data from the store
