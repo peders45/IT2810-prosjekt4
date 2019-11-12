@@ -3,7 +3,6 @@ import store from '../../store';
 import actionTypes from '../../actionTypes';
 import queries from '../../../query';
 import {AsyncStorage} from 'react-native';
-import { setAutoFocusEnabled } from 'expo/build/AR';
  
 //Actions for searching, as well as checking whether search was successful
 export function searchForItem(searchWord) {
@@ -33,9 +32,10 @@ export function searchForItem(searchWord) {
     try{
       let data = null;
 
-      if(searchWord == "StartupSequence"){
+      if(searchWord == "StartupSequenceG56"){
         const localData = await AsyncStorage.getItem('MclocalData');
-        data = JSON.parse(localData);
+        const parsedData = JSON.parse(localData)
+        data = {...parsedData, searchWord: null}
       }else{
         const response = await client.query({
             query: queries.GET_MENU,
@@ -54,13 +54,13 @@ export function searchForItem(searchWord) {
 
 
       
-      if(!data.menus || data.menus.length < 1 && searchWord == "StartupSequence"){
+      if(!data.menus || data.menus.length < 1){
         const response = await client.query({
           query: queries.GET_MENU,
           variables: {
           first: state.first,
           offset:0,
-          searchWord: null,
+          searchWord: searchWord == "StartupSequenceG56" ? null : searchWord,
           categories: categories, 
           sort: {
             sortCategory: state.sortCategory,

@@ -38,6 +38,7 @@ const reducer = (state = {
         ...state,
         menus: action.payload.menus,
         count: action.payload.count,
+        searchWord: action.payload.searchWord,
         status: "menu received"
       };
     case "MENU_FAILED":

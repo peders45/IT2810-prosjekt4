@@ -37,7 +37,7 @@ export function doPagination(isNext) {
       variables: {
       first: state.first,
       offset:offset,
-      searchWord: state.searchWord == "StartupSequence" ? null : state.searchWord,
+      searchWord: state.searchWord == "StartupSequenceG56" ? null : state.searchWord,
       categories: categories, 
       minReviewScore: state.sliderRating,
       maxCalories: state.sliderMaxCalories,
