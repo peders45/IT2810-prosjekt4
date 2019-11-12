@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { sortResult }  from "../../state/actions/sortingActions";
 import { View, StyleSheet, Picker } from 'react-native';
 
-//Drop down menu for selection of value to sort results on
+//Drop down menu for selection of value to sort results on. Placed in side menu.
 const SortingDropDown = ({ sortResult }) => { 
     const [ selectedValue, setSelectedValue ] = useState();
 

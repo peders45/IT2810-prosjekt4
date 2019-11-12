@@ -6,7 +6,8 @@ import { connect } from 'react-redux'
 import { toggleSideMenu }  from "../../state/actions/sideMenuActions";
 import { searchForItem }  from "../../state/actions/searchActions";
 
-//Section for category checkboxes
+//Section for category checkboxes to filter result. Placed in side menu.
+//Also buttons to apply filter or close side menu. 
 const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord }) => {
   const handleFilter = () => {
     toggleSideMenu(!drawerStatus);

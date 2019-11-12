@@ -4,7 +4,7 @@ import { Header, Icon, Avatar } from 'react-native-elements'
 import { searchForItem }  from "../../state/actions/searchActions";
 import { connect } from 'react-redux'
 
-//Input field and button for text search
+//Input field and button for text search.
 const SearchField = ({ searchForItem }) => {
   const [ input, setInput ] = useState([]);
     

@@ -6,6 +6,10 @@ import ResultHeader from '../atoms/ResultHeader'
 import { connect } from 'react-redux'
 import { doPagination } from '../../state/actions/paginationAction'
 
+//List display of result set of menu items. 
+//Displayed as sets of six, with buttons to browse between 'next' or 'previous' page.
+//Accordion component is used for expansion panel functionality, 
+//and takes in the header and detailsection of each menu item displayed.
 const ResultSection = ({doPagination, menuItems, offset, count}) => {
   
     const [activeSections, setActiveSections] = useState([])

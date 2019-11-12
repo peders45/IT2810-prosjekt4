@@ -4,7 +4,8 @@ import { AirbnbRating } from 'react-native-elements';
 import { connect } from 'react-redux'
 import {rateMenu} from '../../state/actions/ratingActions'
 
-
+//Rating functionality for each menu item, imported from 'react-native-elements'.
+//Rating out of five stars, added to database.
   const RatingWrapper = ({ rateMenu, menuId }) => {
 
     const setRating = (value) =>{
@@ -38,5 +39,6 @@ const styles = StyleSheet.create({
         display:"flex",
         justifyContent:"center",
         alignItems: "center",
+        marginRight: 10,
       }
 });
