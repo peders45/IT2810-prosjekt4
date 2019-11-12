@@ -5,10 +5,11 @@ import { Text, View, StyleSheet, TouchableOpacity  } from 'react-native';
 import { connect } from 'react-redux'
 import { toggleSideMenu }  from "../../state/actions/sideMenuActions";
 import { searchForItem }  from "../../state/actions/searchActions";
+import {showFavourites} from "../../state/actions/favouritesActions"
 
 //Section for category checkboxes to filter result. Placed in side menu.
 //Also buttons to apply filter or close side menu. 
-const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord }) => {
+const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWord, showFavourites }) => {
   const handleFilter = () => {
     toggleSideMenu(!drawerStatus);
     searchForItem(searchWord)
@@ -30,7 +31,7 @@ const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWo
       <TouchableOpacity onPress={() => handleFilter()} style={styles.button}>
           <Text style={styles.buttonText}>Filter and sort</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => showFavourite()} style={styles.button}>
+      <TouchableOpacity onPress={() => showFavourites()} style={styles.button}>
           <Text style={styles.buttonText}>Show favourites</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => toggleSideMenu(!drawerStatus)} style={styles.button}>
@@ -44,6 +45,7 @@ const CategorySection = ({ toggleSideMenu, drawerStatus, searchForItem, searchWo
 const mapDispatchToProps = {
   toggleSideMenu,
   searchForItem,
+  showFavourites
  };
 
  //Extract data from the store

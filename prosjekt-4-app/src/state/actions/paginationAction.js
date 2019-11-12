@@ -34,7 +34,7 @@ export function doPagination(isNext) {
     client.query({
       query: queries.GET_MENU,
       variables: {
-      first: state.first,
+      first: 6,
       offset:offset,
       searchWord: state.searchWord,
       categories: categories, 

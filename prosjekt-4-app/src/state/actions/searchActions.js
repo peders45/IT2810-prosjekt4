@@ -31,7 +31,7 @@ export function searchForItem(searchWord) {
     client.query({
       query: queries.GET_MENU,
       variables: {
-      first: state.first,
+      first: 6,
       offset:0,
       searchWord: searchWord,
       categories: categories, 

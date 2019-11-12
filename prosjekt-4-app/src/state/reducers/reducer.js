@@ -21,6 +21,7 @@ const reducer = (state = {
     case "PAGINATION":
       return state = {
         ...state,
+        first: 6,
         offset: action.payload
       };
     case "SEARCHWORD":
@@ -36,6 +37,7 @@ const reducer = (state = {
     case "MENU_RECEIVED":
       return state = {
         ...state,
+        first: action.payload.data.menu.first,
         menus: action.payload.data.menu.menus,
         count: action.payload.data.menu.count,
         status: "menu received"
@@ -63,6 +65,38 @@ const reducer = (state = {
         error: action.payload,
         status: "rating failed"
       };
+      case "SAVE_FAVOURITE_REQUESTED":
+      return state = {
+        ...state,
+        status: "Saving favourite waiting"
+      };
+    case "SAVE_FAVOURITE_RECIEVED":
+      return state = {
+        ...state,
+        status: "Favourite saved"
+      };
+    case "SAVE_FAVOURITE_FAILED":
+      return state = {
+        ...state,
+        error: action.payload,
+        status: "Saving favourite failed"
+      };
+      case "SHOW_FAVOURITE_REQUESTED":
+        return state = {
+          ...state,
+          status: "Showing favourite waiting"
+        };
+      case "SHOW_FAVOURITE_RECIEVED":
+        return state = {
+          ...action.payload,
+          status: "Favourite shown"
+        };
+      case "SHOW_FAVOURITE_FAILED":
+        return state = {
+          ...state,
+          error: action.payload,
+          status: "Showing favourite failed"
+        };
     case "CATEGORY_CHECK":
       return state = {
         ...state,

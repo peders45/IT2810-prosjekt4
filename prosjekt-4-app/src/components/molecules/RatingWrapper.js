@@ -3,10 +3,11 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 import { AirbnbRating } from 'react-native-elements';
 import { connect } from 'react-redux'
 import {rateMenu} from '../../state/actions/ratingActions'
+import {saveFavourite} from '../../state/actions/favouritesActions'
 
 //Rating functionality for each menu item, imported from 'react-native-elements'.
 //Rating out of five stars, added to database.
-  const RatingWrapper = ({ rateMenu, menuId }) => {
+  const RatingWrapper = ({ rateMenu, menuId, saveFavourite }) => {
 
     const setRating = (value) =>{
       rateMenu(value, menuId)
@@ -32,7 +33,8 @@ import {rateMenu} from '../../state/actions/ratingActions'
 
 
   const mapDispatchToProps = {
-    rateMenu
+    rateMenu,
+    saveFavourite
    };
 
 export default connect(null, mapDispatchToProps)(RatingWrapper)
