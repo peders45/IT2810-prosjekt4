@@ -4,7 +4,7 @@ Vi har valgt å ta utgangspunkt i vårt eget prosjekt 3 med bruk av samme databa
 ## Krav til applikasjonens innhold og funksjonalitet
 
 ### Søkegrensesnitt
-Vi implementerte som sist et søkefelt der man kan søke med fritekst etter varer i datasettet. Det fungerer slik at når man trykker på søkeknappen dispatches en action creator der søkeordet sendes med som argument. Videre vil action creatoren hente inn staten og gjøre en spørring basert på denne sammen med søkeordet. Dataene som hentes ut fra databasen lagres så i staten og vises til brukeren i en listevisning. Søkefeltet er laget som et TextInput, og søkeknappen et ikon fra biblioteket ‘react-native-elements’. Vi fikk i tillegg noe kritikk for fargevalg sist da de røde og gule fargene ble beskrevet som “litt mye”. Vi har valgt å tone ned fargenyansene noe, men vi mener McDonald’s-fargene passer godt til temaet i databasen og ønsker derfor ikke å gå helt bort fra disse.
+Vi implementerte som sist et søkefelt der man kan søke med fritekst etter varer i datasettet. Det fungerer slik at når man trykker på søkeknappen dispatches en action creator der søkeordet sendes med som argument. Videre vil action creatoren hente inn staten og gjøre en spørring basert på denne sammen med søkeordet. Dataene som hentes ut fra databasen lagres så i staten og vises til brukeren i en listevisning. Søkefeltet er laget som et TextInput, og søkeknappen et ikon fra biblioteket ‘react-native-elements’. Vi fikk kritikk for fargevalg sist, og de røde og gule fargene ble beskrevet som “litt mye”. Vi har valgt å tone ned fargenyansene noe, men vi mener McDonald’s-fargene passer godt til temaet i databasen og ønsker derfor ikke å gå helt bort fra disse.
 
 ### Dynamisk lasting
 Vi har valgt å gå for en “bla i sider” måte å håndtere resultatframvisningen på da dette ga mest mening med tanke på backend oppsettet vi lagde sist, og måten dataen hentes fra databasen. Denne funksjonaliteten er implementert med to knapper som TouchableOpacity (håndterer touch i React Native) nederst på siden som endrer “offset” og gjør avgrensede spørringer når man blar mellom sidene. For å gi plass til ekspandering av menyobjektene for detaljert visning, har vi valgt å kun vise seks menyobjekter av gangen, ettersom dette passet best for ulike skjermstørrelser.
@@ -52,15 +52,15 @@ Applikasjonen ble testet på flere android-enheter og iOS-enheter, både fysisk 
 
 ### Manuell end-to-end testing
 Vi valgte å utføre end-to-end testing av applikasjonen ved å definere ulike brukerscenarioer, og teste gjennomføring av disse. Scenarioene ble laget slik at de skulle dekke alle brukerkrav beskrevet i oppgaven, og teste all funksjonalitet implementert i applikasjonen. Appen ble restartet mellom hver testoppgave, slik at ingen filtere/sorteringer/søkeord var aktive ved oppstart av et testscenario. Gjennomføringen av brukerscenarioene var vellykket, og alle enheter og komponenter fungerte som forventet. Testoppgavene er listet nedenfor:
-Søk etter “Hamburger” med søkeknappen i headeren, og les av kaloriinnholdet.
-Søk etter “Cheeseburger” med søkeknappen på keyboardet, og les av proteininnholdet.
-Finn menyobjektet i kategoriene “Salads” og “Desserts” med høyest rating.
-Avgi din rating på menyobjektet “Egg_McMuffin”.
-Finn “shake”-menyobjektet med høyest rating, og legg til i “Favoritter”.
-Finn menyobjektet med lavest kaloriinnhold i kategorien “Breakfast”, der navnet inneholder søkeordet “Mc”.
-Legg til dine to favorittdesserter i “Favoritter”.
-Gi din rating av menyobjektet med høyest kaloriinnhold.
-Finn antall menyobjekter som inneholder søkeordet “Premium”.
-Gå inn og ut av sidemenyen uten å gjøre endringer i filtrering/sortering.
-Bla til tredje side med “Beverages”, og legg til et av menyobjektene i visningen til “Favoritter”. Bla så én side tilbake, og legg til et av menyobjektene her til “Favoritter”.
-Legg til seks favoritter og vis dem. Legg til to favoritter til og vis dem. Restart appen og vis favorittene dine igjen.
+1. Søk etter “Hamburger” med søkeknappen i headeren, og les av kaloriinnholdet.
+2. Søk etter “Cheeseburger” med søkeknappen på keyboardet, og les av proteininnholdet.
+3. Finn menyobjektet i kategoriene “Salads” og “Desserts” med høyest rating.
+4. Avgi din rating på menyobjektet “Egg_McMuffin”.
+5. Finn “shake”-menyobjektet med høyest rating, og legg til i “Favoritter”.
+6. Finn menyobjektet med lavest kaloriinnhold i kategorien “Breakfast”, der navnet inneholder søkeordet “Mc”.
+7. Legg til dine to favorittdesserter i “Favoritter”.
+8. Gi din rating av menyobjektet med høyest kaloriinnhold.
+9. Finn antall menyobjekter som inneholder søkeordet “Premium”.
+10. Gå inn og ut av sidemenyen uten å gjøre endringer i filtrering/sortering.
+11. Bla til tredje side med “Beverages”, og legg til et av menyobjektene i visningen til “Favoritter”. Bla så én side tilbake, og legg til et av menyobjektene her til “Favoritter”.
+12. Legg til seks favoritter og vis dem. Legg til to favoritter til og vis dem. Restart appen og vis favorittene dine igjen.
